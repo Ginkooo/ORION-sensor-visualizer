@@ -16,7 +16,7 @@ public:
     QString get_name();
     void set_name(const QString &name);
     int get_distance();
-    void set_distance();
+    void set_distance(const int &distance);
 
 signals:
     void name_changed;
