@@ -1,0 +1,81 @@
+<Sensor>:
+    text: self.__class__.__name__
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            size: root.size
+            pos: root.pos
+    Label:
+        text: root.text
+        pos_hint: {'top': 0.95, 'x': 0.05}
+        color: 0.5, 0.5, 0.5, 1
+        size_hint: None, None
+        size: self.texture_size
+    Label:
+        text: str(root.reading)
+        pos_hint: {'top': 0.95, 'right': 0.95}
+        color: 0.5, 0.5, 0.5, 1
+        size_hint: None, None
+        size: self.texture_size
+
+
+<ProximitySensor>:
+    size_hint_y: 0.3
+    Widget:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        size_hint_x: 0.8
+        size_hint_y: 0.03
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Widget:
+            pos: parent.pos
+            size: parent.size
+            canvas.before:
+                Color:
+                    rgba: 1, 0, 1, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+<Gyroscope>:
+
+<Potentiometer>:
+
+GridLayout:
+    id: proximity_sensors_grid
+    rows: 5
+    cols: 2
+    spacing: 5
+    ProximitySensor:
+        id: prox_1
+        text: 'prox1'
+    ProximitySensor:
+        id: prox_2
+        text: 'prox2'
+    ProximitySensor:
+        id: prox_3
+        text: 'prox3'
+    ProximitySensor:
+        id: prox_4
+        text: 'prox4'
+    ProximitySensor:
+        id: prox_5
+        text: 'prox5'
+    ProximitySensor:
+        id: prox_6
+        text: 'prox6'
+    ProximitySensor:
+        id: prox_7
+        text: 'prox7'
+    ProximitySensor:
+        id: prox_8
+        text: 'prox8'
+
+    Gyroscope:
+
+    Potentiometer:
