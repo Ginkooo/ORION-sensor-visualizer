@@ -8,6 +8,7 @@ Sensor list
 
 Installation
 ============
+* install python 3.6 from https://python.org
 * you have to install kivy form https://kivy.org
 
 Usage
