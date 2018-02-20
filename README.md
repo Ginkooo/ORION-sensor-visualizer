@@ -16,3 +16,9 @@ Usage
 `./main.py`
 
 * When DEBUG is True (config.py), you can click on sensor area to increase reading value
+
+
+TODO
+====
+
+* gyroscope line indicator not scales
