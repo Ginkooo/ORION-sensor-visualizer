@@ -7,11 +7,42 @@
     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     size: self.parent.size[0] * 0.9, self.parent.size[1] * 0.05
 
+<CircleIndicator>:
+    percentage: self.parent.reading / 270
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    size_hint: None, None
+    size: self.parent.size[0] * 0.4, self.parent.size[0] * 0.4
+    canvas.before:
+        Rotate:
+            origin: self.center
+            angle: 135
+        Color:
+            rgba: 0, 0, 1, 1
+        Ellipse:
+            pos: root.pos
+            size: root.size
+            angle_start: 0
+            angle_end: 270
+    canvas:
+        Color:
+            rgba: self.parent.color
+        Ellipse:
+            size: self.size[0] * 0.8, self.size[1] * 0.8
+            pos: self.center_x - self.size[0] * 0.8 / 2, self.center_y - self.size[1] * 0.8 / 2
+    canvas.after:
+        Color:
+            rgba: 1, 0, 0, 1
+        Ellipse:
+            angle_start: root.percentage * 270 - 10
+            angle_end: root.percentage * 270 + 10
+            size: self.size[0] * 1.1, self.size[1] * 1.1
+            pos: self.center_x - self.size[0] * 1.1 / 2, self.center_y - self.size[1] * 1.1 / 2
+
 <Sensor>:
     text: self.__class__.__name__
     canvas.before:
         Color:
-            rgba: 1, 1, 1, 1
+            rgba: root.color
         Rectangle:
             size: root.size
             pos: root.pos
@@ -36,6 +67,7 @@
 <Gyroscope>:
 
 <Potentiometer>:
+    CircleIndicator:
 
 GridLayout:
     id: proximity_sensors_grid
