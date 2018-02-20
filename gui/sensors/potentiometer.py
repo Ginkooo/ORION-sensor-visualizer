@@ -1,4 +1,4 @@
-from sensors.sensor import Sensor
+from gui.sensors.sensor import Sensor
 
 
 class Potentiometer(Sensor):

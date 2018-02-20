@@ -3,7 +3,7 @@ import math
 from kivy.properties import ListProperty, NumericProperty
 from kivy.clock import Clock
 
-from sensors.sensor import Sensor
+from gui.sensors.sensor import Sensor
 
 
 class Gyroscope(Sensor):

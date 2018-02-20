@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 from kivy.app import App
 
-from sensors.gyroscope import Gyroscope
-from sensors.potentiometer import Potentiometer
-from sensors.proximitysensor import ProximitySensor
-from indicators import CircleIndicator, ZipIndicator
+from gui.sensors.gyroscope import Gyroscope
+from gui.sensors.potentiometer import Potentiometer
+from gui.sensors.proximitysensor import ProximitySensor
+from gui.indicators import CircleIndicator, ZipIndicator
 
 PINK = 1, 0, 1, 1
 BLACK = 0, 0, 0, 1
