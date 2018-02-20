@@ -1,7 +1,11 @@
 class ProximitySensor():
+    # minimum value, which sensor provides
     min = 0
+    # maximum
     max = 1000
+    # unit, in which measurement is done
     unit = 'cm'
+    # GUI updating interval (updating with actual reading)
     update_interval = 1/20
 
 
