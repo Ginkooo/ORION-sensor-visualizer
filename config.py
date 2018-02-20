@@ -23,4 +23,7 @@ class Potentiometer():
     update_interval = 1/20
 
 
+PROVIDERS_PACKAGE = 'providers'
+
+
 DEBUG = True

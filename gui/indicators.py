@@ -5,10 +5,12 @@ from kivy.clock import Clock
 
 
 class ZipIndicator(Slider):
+    """Just a slider child class, for displaying one-axis reading"""
     pass
 
 
 class CircleIndicator(Widget):
+    """Display one-axis reading, but looks like an non-complete ring"""
     percentage = NumericProperty(0)
 
     def __init__(self, *args, **kwargs):

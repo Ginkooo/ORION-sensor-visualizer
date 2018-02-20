@@ -8,6 +8,7 @@ import config
 
 
 class Gyroscope(Sensor):
+    """Gyroscope sensor view"""
     reading = ListProperty([0, 0, 0])
     colors = ListProperty([0, 0, 0, 1])
     line_width = NumericProperty(3.0)
@@ -23,10 +24,12 @@ class Gyroscope(Sensor):
         ])
 
     def set_colors(self, *args):
+        """sets colors to visually represent readings"""
         for i in range(3):
             self.colors[i] = self.reading[i] / self.max
 
     def set_points(self, *args):
+        """set up lines for reading indicators"""
         line_l = self.width / 3
         cross = ((line_l) / math.sqrt(2),
                  (line_l) / math.sqrt(2))
@@ -42,4 +45,5 @@ class Gyroscope(Sensor):
         Clock.schedule_once(self.set_points, 1)
 
     def on_reading(self, *args):
+        """set colors on reading change"""
         self.set_colors()
