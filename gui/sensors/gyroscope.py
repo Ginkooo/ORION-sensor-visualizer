@@ -4,6 +4,7 @@ from kivy.properties import ListProperty, NumericProperty
 from kivy.clock import Clock
 
 from gui.sensors.sensor import Sensor
+import config
 
 
 class Gyroscope(Sensor):
@@ -11,8 +12,8 @@ class Gyroscope(Sensor):
     colors = ListProperty([0, 0, 0, 1])
     line_width = NumericProperty(3.0)
 
-    min = NumericProperty(0)
-    max = NumericProperty(1000)
+    min = NumericProperty(config.Gyroscope.min)
+    max = NumericProperty(config.Gyroscope.max)
 
     points = ListProperty([
         [1, 1, 1, 1],
