@@ -18,3 +18,6 @@ class Sensor(FloatLayout):
                     for i in range(len(self.reading)):
                         self.reading[i] += 100
                 return True
+
+    def update(self):
+        self.reading = self.provider.reading

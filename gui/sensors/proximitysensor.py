@@ -12,14 +12,14 @@ class ProximitySensor(Sensor):
         super().__init__(*args, **kwargs)
         Clock.schedule_once(self.set_provider, 0)
 
-    def read(self, *args):
+    def update(self, *args):
         self.reading = self.provider.reading
 
     def set_provider(self, *args):
         self.provider = ProximitySensorProvider(self.text)
         if not config.DEBUG:
             interval = config.ProximitySensor.update_interval
-            Clock.schedule_interval(self.read, interval)
+            Clock.schedule_interval(self.update, interval)
 
     max = NumericProperty(config.ProximitySensor.max)
     min = NumericProperty(config.ProximitySensor.min)
