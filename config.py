@@ -14,3 +14,6 @@ class Potentiometer():
     min = 0
     max = 270
     unit = 'degrees'
+
+
+DEBUG = True

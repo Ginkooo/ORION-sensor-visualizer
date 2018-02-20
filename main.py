@@ -8,20 +8,23 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import StringProperty, NumericProperty, ListProperty
 from kivy.clock import Clock
 
+import config
+
 PINK = 1, 0, 1, 1
 BLACK = 0, 0, 0, 1
 WHITE = 1, 1, 1, 1
-
-
-def some_function(obj, *args, **kwargs):
-    obj.reading = 200
-    print('dupsko')
 
 
 class Sensor(FloatLayout):
     text = StringProperty('')
     reading = NumericProperty(20)
     color = ListProperty([1, 1, 1, 1])
+
+    if config.DEBUG:
+        def on_touch_down(self, touch):
+            if self.collide_point(*touch.pos):
+                self.reading += 1
+                return True
 
 
 class ProximitySensor(Sensor):
