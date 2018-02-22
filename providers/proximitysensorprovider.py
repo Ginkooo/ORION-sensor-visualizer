@@ -11,4 +11,4 @@ class ProximitySensorProvider(Provider):
     @property
     def reading(self):
         """reffer to Provider base class"""
-        return 42
+        return 1520

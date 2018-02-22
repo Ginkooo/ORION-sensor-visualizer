@@ -26,4 +26,4 @@ class Potentiometer():
 PROVIDERS_PACKAGE = 'providers'
 
 
-DEBUG = True
+DEBUG = False

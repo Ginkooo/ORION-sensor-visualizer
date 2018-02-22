@@ -13,6 +13,7 @@ class Sensor(FloatLayout):
     text = StringProperty('')
     # sensor reading (GUI)
     reading = NumericProperty(20.5)
+    reading_real = NumericProperty(20.5)
     # color, it is used by some sensors
     color = ListProperty([0.3, 0.3, 0.3, 1])
 
@@ -28,9 +29,15 @@ class Sensor(FloatLayout):
                 return True
 
     def update(self, *args):
-        """sets GUI class 'reading' to actual value provided by a sensor data
-        provider"""
-        self.reading = self.provider.reading
+        """sets GUI class 'reading_real' to actual value provided by a sensor data
+        provider and 'reading' to value inside <min, max>"""
+        reading = reading_real = self.provider.reading
+        if reading_real > self.max:
+            reading = self.max
+        if reading_real < self.min:
+            reading = self.min
+        self.reading = reading
+        self.reading_real = reading_real
 
     def set_provider(self, *args):
         """Uses reflection to get correct Provider class for a Sensor, then
