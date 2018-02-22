@@ -30,7 +30,7 @@ class Gyroscope(Sensor):
 
     def set_points(self, *args):
         """set up lines for reading indicators"""
-        line_l = self.width / 3
+        line_l = self.height / 3
         cross = ((line_l) / math.sqrt(2),
                  (line_l) / math.sqrt(2))
         self.points[0] = self.center + [self.center_x + line_l,
@@ -47,3 +47,7 @@ class Gyroscope(Sensor):
     def on_reading(self, *args):
         """set colors on reading change"""
         self.set_colors()
+
+    def on_size(self, *args):
+        """resise graph on sensor view resize"""
+        self.set_points()
