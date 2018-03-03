@@ -5,7 +5,8 @@ from kivy.properties import StringProperty, NumericProperty, ListProperty
 from kivy.clock import Clock
 
 import config
-import providers.utils
+import utils.provider
+import utils.reading
 
 
 class Sensor(FloatLayout):
@@ -36,11 +37,7 @@ class Sensor(FloatLayout):
             return False
 
     def on_reading_real(self, instance, value):
-        reading = value
-        if value > self.max:
-            reading = self.max
-        if value < self.min:
-            reading = self.min
+        reading = utils.reading.normalize_value(value, self.min, self.max)
         self.reading = reading
 
     def update(self, *args):
@@ -52,8 +49,9 @@ class Sensor(FloatLayout):
     def set_provider(self, *args):
         """Uses reflection to get correct Provider class for a Sensor, then
         schedules reading update"""
-        provider_cls = providers.utils.get_provider_cls(self)
+        provider_cls = utils.provider.get_provider_cls(self)
         self.provider = provider_cls(self.text)
         if not config.DEBUG:
             interval = config.ProximitySensor.update_interval
             Clock.schedule_interval(self.update, interval)
+
