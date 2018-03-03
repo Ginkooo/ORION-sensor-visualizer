@@ -1,5 +1,7 @@
+from types import SimpleNamespace
+
 from kivy.uix.floatlayout import FloatLayout
-from kivy.properties import StringProperty, NumericProperty, ListProperty
+from kivy.properties import (StringProperty, ListProperty, AliasProperty)
 from kivy.clock import Clock
 
 import config
@@ -7,13 +9,33 @@ import utils.provider
 import utils.reading
 
 
+def get_reading(self):
+    return self._reading.normalized
+
+
+def get_reading_real(self):
+    return self._reading.real
+
+
+def set_reading(self, value):
+    self._reading.normalized = value
+    return True
+
+
+def set_reading_real(self, value):
+    reading = utils.reading.normalize_value(value, self.min, self.max)
+    self.reading = reading
+    self._reading.real = value
+    return True
+
+
 class Sensor(FloatLayout):
     """Base class for sensor views"""
     # sensor name
     text = StringProperty('')
     # sensor reading (GUI)
-    reading = NumericProperty(20.5)
-    reading_real = NumericProperty(20.5)
+    reading = AliasProperty(get_reading, set_reading)
+    reading_real = AliasProperty(get_reading_real, set_reading_real)
     # color, it is used by some sensors
     color = ListProperty([0.3, 0.3, 0.3, 1])
 
@@ -34,9 +56,12 @@ class Sensor(FloatLayout):
                 return True
             return False
 
-    def on_reading_real(self, instance, value):
-        reading = utils.reading.normalize_value(value, self.min, self.max)
-        self.reading = reading
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        reading = SimpleNamespace()
+        reading.real = 42
+        reading.normalized = 42
+        self._reading = reading
 
     def update(self, *args):
         """sets GUI class 'reading_real' to actual value provided by a sensor data
