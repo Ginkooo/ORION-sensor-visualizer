@@ -22,10 +22,10 @@ class Sensor(FloatLayout):
             """for debugging, click to increase reading by some amount"""
             if self.collide_point(*touch.pos):
                 try:
-                    self.reading += 20
+                    self.reading_real += 20
                 except TypeError:
                     for i in range(len(self.reading)):
-                        self.reading[i] += 100
+                        self.reading_real[i] += 100
                 return True
     else:
         def on_touch_down(self, touch):
@@ -34,15 +34,18 @@ class Sensor(FloatLayout):
                 return True
             return False
 
+    def on_reading_real(self, instance, value):
+        reading = value
+        if value > self.max:
+            reading = self.max
+        if value < self.min:
+            reading = self.min
+        self.reading = reading
+
     def update(self, *args):
         """sets GUI class 'reading_real' to actual value provided by a sensor data
         provider and 'reading' to value inside <min, max>"""
-        reading = reading_real = self.provider.reading
-        if reading_real > self.max:
-            reading = self.max
-        if reading_real < self.min:
-            reading = self.min
-        self.reading = reading
+        reading_real = self.provider.reading
         self.reading_real = reading_real
 
     def set_provider(self, *args):
