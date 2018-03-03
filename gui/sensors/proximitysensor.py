@@ -17,3 +17,7 @@ class ProximitySensor(Sensor):
         super().__init__(*args, **kwargs)
         Clock.schedule_once(self.set_provider, 0)
 
+    # def on_touch_down(self, touch):
+    #     if self.collide_point(*touch.pos):
+    #         return True
+    #     return False

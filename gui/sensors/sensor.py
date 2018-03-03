@@ -27,6 +27,12 @@ class Sensor(FloatLayout):
                     for i in range(len(self.reading)):
                         self.reading[i] += 100
                 return True
+    else:
+        def on_touch_down(self, touch):
+            """disables sensor widget interavtivity in non debug mode"""
+            if self.collide_point(*touch.pos):
+                return True
+            return False
 
     def update(self, *args):
         """sets GUI class 'reading_real' to actual value provided by a sensor data
