@@ -10,6 +10,7 @@ import config
 class Gyroscope(Sensor):
     """Gyroscope sensor view"""
     reading = ListProperty([0, 0, 0])
+    reading_real = ListProperty([0, 0, 0])
     colors = ListProperty([0, 0, 0, 1])
     line_width = NumericProperty(3.0)
 

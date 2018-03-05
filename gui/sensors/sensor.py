@@ -46,7 +46,7 @@ class Sensor(FloatLayout):
                 try:
                     self.reading_real += 20
                 except TypeError:
-                    for i in range(len(self.reading)):
+                    for i in range(len(self.reading_real)):
                         self.reading_real[i] += 100
                 return True
     else:
@@ -78,3 +78,5 @@ class Sensor(FloatLayout):
             interval = config.ProximitySensor.update_interval
             Clock.schedule_interval(self.update, interval)
 
+    def on_reading_real(self, instance, value):
+        self.reading = value
