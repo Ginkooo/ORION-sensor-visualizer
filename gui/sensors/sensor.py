@@ -18,13 +18,12 @@ def get_reading_real(self):
 
 
 def set_reading(self, value):
-    self._reading.normalized = value
+    reading = utils.reading.normalize_value(value, self.min, self.max)
+    self._reading.normalized = reading
     return True
 
 
 def set_reading_real(self, value):
-    reading = utils.reading.normalize_value(value, self.min, self.max)
-    self.reading = reading
     self._reading.real = value
     return True
 
@@ -62,6 +61,7 @@ class Sensor(FloatLayout):
         reading.real = 42
         reading.normalized = 42
         self._reading = reading
+        Clock.schedule_once(self.set_provider, 0)
 
     def update(self, *args):
         """sets GUI class 'reading_real' to actual value provided by a sensor data

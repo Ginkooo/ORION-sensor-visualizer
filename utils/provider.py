@@ -13,7 +13,8 @@ def get_provider_cls(sensor):
         try:
             module = importlib.import_module(provider_module_path)
         except ImportError:
-            raise ImportError('Couldnt import module, please reffer to'
-                              'documentation on "How to add sensors"')
+            raise ImportError(f'Couldnt import module {provider_module_path}, '
+                              f'please reffer to'
+                              f'documentation on "How to add sensors"')
         provider_cls = getattr(module, provider_cls_name)
         return provider_cls
