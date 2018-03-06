@@ -44,6 +44,8 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   guide/installation
+
    api/orionsensor.gui
    api/orionsensor.gui.sensors
    api/orionsensor.utils
