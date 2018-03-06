@@ -1,0 +1,125 @@
+#: import math math
+
+
+<ZipIndicator>:
+    max: self.parent.max
+    min: self.parent.min
+    value: self.parent.reading
+    center: self.parent.center
+    size_hint: None, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    size: self.parent.size[0] * 0.9, self.parent.size[1] * 0.05
+
+<CircleIndicator>:
+    percentage: self.parent.reading / 270
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    size_hint: None, None
+    size: self.parent.size[0] * 0.4, self.parent.size[0] * 0.4
+    canvas.before:
+        Rotate:
+            origin: self.center
+            angle: 135
+        Color:
+            rgba: 0, 0, 1, 1
+        Ellipse:
+            pos: root.pos
+            size: root.size
+            angle_start: 0
+            angle_end: 270
+    canvas:
+        Color:
+            rgba: self.parent.color
+        Ellipse:
+            size: self.size[0] * 0.8, self.size[1] * 0.8
+            pos: self.center_x - self.size[0] * 0.8 / 2, self.center_y - self.size[1] * 0.8 / 2
+    canvas.after:
+        Color:
+            rgba: 1, 0, 0, 1
+        Ellipse:
+            angle_start: root.percentage * 270 - 10
+            angle_end: root.percentage * 270 + 10
+            size: self.size[0] * 1.1, self.size[1] * 1.1
+            pos: self.center_x - self.size[0] * 1.1 / 2, self.center_y - self.size[1] * 1.1 / 2
+
+<Sensor>:
+    text: self.__class__.__name__
+    canvas.before:
+        Color:
+            rgba: root.color
+        Rectangle:
+            size: root.size
+            pos: root.pos
+    Label:
+        text: root.text
+        pos_hint: {'top': 0.95, 'x': 0.05}
+        color: 0.5, 0.5, 0.5, 1
+        size_hint: None, None
+        size: self.texture_size
+    Label:
+        text: str(root.reading_real)
+        pos_hint: {'top': 0.95, 'right': 0.95}
+        color: 0.5, 0.5, 0.5, 1
+        size_hint: None, None
+        size: self.texture_size
+
+
+<ProximitySensor>:
+    size_hint_y: 0.3
+    ZipIndicator:
+
+<Gyroscope>:
+    canvas.before:
+        Color:
+            hsv: 1, 1, self.colors[2]
+        Line:
+            points: self.points[2]
+            width: root.line_width
+        Color:
+            hsv: 0.3, 1, self.colors[1]
+        Line:
+            points: self.points[1]
+            width: root.line_width
+        Color:
+            hsv: 0.2, 1, self.colors[0]
+        Line:
+            points: self.points[0]
+            width: root.line_width
+
+<Potentiometer>:
+    CircleIndicator:
+
+GridLayout:
+    id: proximity_sensors_grid
+    rows: 5
+    cols: 2
+    spacing: 5
+    ProximitySensor:
+        id: prox_1
+        text: 'prox1'
+    ProximitySensor:
+        id: prox_2
+        text: 'prox2'
+    ProximitySensor:
+        id: prox_3
+        text: 'prox3'
+    ProximitySensor:
+        id: prox_4
+        text: 'prox4'
+    ProximitySensor:
+        id: prox_5
+        text: 'prox5'
+    ProximitySensor:
+        id: prox_6
+        text: 'prox6'
+    ProximitySensor:
+        id: prox_7
+        text: 'prox7'
+    ProximitySensor:
+        id: prox_8
+        text: 'prox8'
+
+    Gyroscope:
+        id: gyroscope
+
+    Potentiometer:
+        id: potentiometer

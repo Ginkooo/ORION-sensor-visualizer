@@ -1,0 +1,22 @@
+orionsensor package
+===================
+
+Submodules
+----------
+
+orionsensor.skeleton module
+---------------------------
+
+.. automodule:: orionsensor.skeleton
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: orionsensor
+    :members:
+    :undoc-members:
+    :show-inheritance:

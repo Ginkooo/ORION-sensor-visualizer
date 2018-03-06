@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>orionsensor.providers package &#8212; orionsensor unknown documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="License" href="../license.html" />
+    <link rel="prev" title="orionsensor.utils package" href="orionsensor.utils.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="orionsensor-providers-package">
+<h1>orionsensor.providers package<a class="headerlink" href="#orionsensor-providers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-orionsensor.providers.gyroscopeprovider">
+<span id="orionsensor-providers-gyroscopeprovider-module"></span><h2>orionsensor.providers.gyroscopeprovider module<a class="headerlink" href="#module-orionsensor.providers.gyroscopeprovider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="orionsensor.providers.gyroscopeprovider.GyroscopeProvider">
+<em class="property">class </em><code class="descclassname">orionsensor.providers.gyroscopeprovider.</code><code class="descname">GyroscopeProvider</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/orionsensor/providers/gyroscopeprovider.html#GyroscopeProvider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#orionsensor.providers.gyroscopeprovider.GyroscopeProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">providers.provider.Provider</span></code></p>
+<p>Provide data for gyroscope</p>
+<dl class="attribute">
+<dt id="orionsensor.providers.gyroscopeprovider.GyroscopeProvider.reading">
+<code class="descname">reading</code><a class="headerlink" href="#orionsensor.providers.gyroscopeprovider.GyroscopeProvider.reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>override base method</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-orionsensor.providers.potentiometerprovider">
+<span id="orionsensor-providers-potentiometerprovider-module"></span><h2>orionsensor.providers.potentiometerprovider module<a class="headerlink" href="#module-orionsensor.providers.potentiometerprovider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="orionsensor.providers.potentiometerprovider.PotentiometerProvider">
+<em class="property">class </em><code class="descclassname">orionsensor.providers.potentiometerprovider.</code><code class="descname">PotentiometerProvider</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/orionsensor/providers/potentiometerprovider.html#PotentiometerProvider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#orionsensor.providers.potentiometerprovider.PotentiometerProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">providers.provider.Provider</span></code></p>
+<p>Provide data for potentiometer view</p>
+<dl class="attribute">
+<dt id="orionsensor.providers.potentiometerprovider.PotentiometerProvider.reading">
+<code class="descname">reading</code><a class="headerlink" href="#orionsensor.providers.potentiometerprovider.PotentiometerProvider.reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>override parent property</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-orionsensor.providers.provider">
+<span id="orionsensor-providers-provider-module"></span><h2>orionsensor.providers.provider module<a class="headerlink" href="#module-orionsensor.providers.provider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="orionsensor.providers.provider.Provider">
+<em class="property">class </em><code class="descclassname">orionsensor.providers.provider.</code><code class="descname">Provider</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/orionsensor/providers/provider.html#Provider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#orionsensor.providers.provider.Provider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.6/library/abc.html#abc.ABC" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
+<p>Base class for sensor reading providers</p>
+<dl class="attribute">
+<dt id="orionsensor.providers.provider.Provider.reading">
+<code class="descname">reading</code><a class="headerlink" href="#orionsensor.providers.provider.Provider.reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>return current sensor reading</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-orionsensor.providers.proximitysensorprovider">
+<span id="orionsensor-providers-proximitysensorprovider-module"></span><h2>orionsensor.providers.proximitysensorprovider module<a class="headerlink" href="#module-orionsensor.providers.proximitysensorprovider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="orionsensor.providers.proximitysensorprovider.ProximitySensorProvider">
+<em class="property">class </em><code class="descclassname">orionsensor.providers.proximitysensorprovider.</code><code class="descname">ProximitySensorProvider</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/orionsensor/providers/proximitysensorprovider.html#ProximitySensorProvider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#orionsensor.providers.proximitysensorprovider.ProximitySensorProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">providers.provider.Provider</span></code></p>
+<p>Provides data from proximity sensors</p>
+<dl class="attribute">
+<dt id="orionsensor.providers.proximitysensorprovider.ProximitySensorProvider.reading">
+<code class="descname">reading</code><a class="headerlink" href="#orionsensor.providers.proximitysensorprovider.ProximitySensorProvider.reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>reffer to Provider base class</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-orionsensor.providers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-orionsensor.providers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">orionsensor.providers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-orionsensor.providers.gyroscopeprovider">orionsensor.providers.gyroscopeprovider module</a></li>
+<li><a class="reference internal" href="#module-orionsensor.providers.potentiometerprovider">orionsensor.providers.potentiometerprovider module</a></li>
+<li><a class="reference internal" href="#module-orionsensor.providers.provider">orionsensor.providers.provider module</a></li>
+<li><a class="reference internal" href="#module-orionsensor.providers.proximitysensorprovider">orionsensor.providers.proximitysensorprovider module</a></li>
+<li><a class="reference internal" href="#module-orionsensor.providers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="orionsensor.utils.html" title="previous chapter">orionsensor.utils package</a></li>
+      <li>Next: <a href="../license.html" title="next chapter">License</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/orionsensor.providers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Piotr Czajka.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/api/orionsensor.providers.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,22 @@
+orionsensor.dupa package
+========================
+
+Submodules
+----------
+
+orionsensor.dupa.cipa module
+----------------------------
+
+.. automodule:: orionsensor.dupa.cipa
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: orionsensor.dupa
+    :members:
+    :undoc-members:
+    :show-inheritance:
