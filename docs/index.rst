@@ -45,6 +45,8 @@ Contents
    :maxdepth: 2
 
    guide/installation
+   guide/usage
+   guide/add_sensors
 
    api/orionsensor.gui
    api/orionsensor.gui.sensors
