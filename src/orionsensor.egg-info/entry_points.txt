@@ -1,0 +1,5 @@
+
+[console_scripts]
+# script_name = orionsensor.module:function
+# For example:
+# fibonacci = orionsensor.skeleton:run
